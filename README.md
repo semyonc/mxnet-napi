@@ -1,6 +1,6 @@
 # N-API nodejs add-on to use with MXNET  C predict API
 
-This addon has a functionality similar to standard mxnet.js Javascript interface for MXNET predication API but it uses a  compiled version of MXNET instead of emscripten virtual machine. It has impact at the performance and lets usage of GPU acceleration models inside nodejs application.
+This addon has a functionality similar to standard mxnet.js Javascript interface for MXNET prediction API but it uses a  compiled version of MXNET instead of emscripten virtual machine. It has impact at the performance and lets usage of GPU acceleration models inside nodejs application.
 
 To build it 
 
@@ -23,7 +23,7 @@ cmake -G "Visual Studio 15 2017 Win64" -T host=x64 -DUSE_CUDA=0 -DUSE_CUDNN=0 -D
 var mx = require('./addon.js');
 const model = require("sample.json");
 const pred = new mx.Predictor(model, {'data': [1,6,7,9,9] });
-pred.setInput("data", ndarray(mydata, [1,6,7,9,9]));
+pred.setInput("data", mx.ndarray(mydata, [1,6,7,9,9]));
 pred.forward();
 var output = pred.output(0);
 pred.destroy();
