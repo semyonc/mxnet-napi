@@ -12,7 +12,6 @@
         ],
         'include_dirs': [
             "<!@(node -p \"require('node-addon-api').include\")", 
-            "<!(node -e \"require('nan')\")",
             "<!(echo %MXNET_ROOT%)/include",
             "<!(echo %MXNET_ROOT%)/3rdparty/dmlc-core/include",
             "<!(echo %MXNET_ROOT%)/3rdparty/tvm/nnvm/include",

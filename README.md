@@ -23,7 +23,7 @@ cmake -G "Visual Studio 15 2017 Win64" -T host=x64 -DUSE_CUDA=0 -DUSE_CUDNN=0 -D
 var mx = require('./addon.js');
 const model = require("sample.json");
 const pred = new mx.Predictor(model, {'data': [1,6,7,9,9] });
-pred.setInput("data", ndarray(mydata, [1,6,7,9,9]));
+pred.setinput("data", ndarray(mydata, [1,6,7,9,9]));
 pred.forward();
 var output = pred.output(0);
 pred.destroy();

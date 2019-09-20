@@ -62,7 +62,7 @@ Napi::Object Predictor::Init(Napi::Env env, Napi::Object exports) {
     InstanceMethod("forward", &Predictor::Forward),
     InstanceMethod("partialforward", &Predictor::Partialforward),
     InstanceMethod("output", &Predictor::Output),
-    InstanceMethod("setInput", &Predictor::SetInput)
+    InstanceMethod("setinput", &Predictor::SetInput)
   });
 
   constructor = Napi::Persistent(func);

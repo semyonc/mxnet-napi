@@ -2,6 +2,10 @@
   "name": "mxnet-addon",
   "version": "1.0.0",
   "description": "N-API NodeJS addon for mxnet",
+  "preferGlobal": true,
+  "bin": {
+    "mxnet-addon": "addon.js"
+  },
   "main": "addon.js",
   "scripts": {
     "build": "node-gyp rebuild",
@@ -14,7 +18,7 @@
     "node-gyp": "^5.0.0"
   },
   "dependencies": {
-    "bindings": "~1.2.1",    
+    "bindings": "~1.2.1",
     "node-addon-api": "^1.6.3"
   }
 }
