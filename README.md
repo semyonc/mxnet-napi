@@ -14,13 +14,13 @@ cmake -G "Visual Studio 15 2017 Win64" -T host=x64 -DUSE_CUDA=0 -DUSE_CUDNN=0 -D
 
 2. Ensure that the required MXNET, MKLDNN and OpenCV shared libraries are added to the PATH and set path variables MXNET_ROOT and OpenCV_DIR to MXNET local repository root and OpenCV installation dir.
 
-4. Install Chocolatey package manager and build the addon with command ```npm run build``` and install it with ```npm install -g``` command.
+4. Install Chocolatey package manager and build the addon with command ```npm run build``` and link it with ```npm link``` command to your project.
 
 5. To use the addon the next code snippet can be used:
 
 ```javascript
 ...
-var mx = require('./addon.js');
+var mx = require('mxnet-addon');
 const model = require("sample.json");
 const pred = new mx.Predictor(model, {'data': [1,6,7,9,9] });
 pred.setinput("data", ndarray(mydata, [1,6,7,9,9]));
